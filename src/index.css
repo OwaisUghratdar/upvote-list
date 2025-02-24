@@ -19,21 +19,25 @@ body {
   padding: 2rem;
 }
 
+.upvote-list-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
 .upvote-list {
-  position: relative;
   background: #ffffff;
   border-radius: 8px;
   padding: 1rem;
-  margin-bottom: 1rem;
-  min-width: 400px;
+  flex-grow: 1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-right: 10px;
 }
 
 .upvotes-container {
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
-  padding-right: 60px; /* Space for fixed + button */
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
 }
@@ -52,17 +56,17 @@ body {
   border-radius: 6px;
 }
 
-.add-button {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+.list-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-button {
   width: 40px;
   height: 40px;
   border-radius: 8px;
   border: none;
-  background: #F4F6F8;
-  color: #343A40;
   font-size: 1.5rem;
   cursor: pointer;
   display: flex;
@@ -71,6 +75,22 @@ body {
   transition: background-color 0.2s;
 }
 
+.add-button {
+  background: #F4F6F8;
+  color: #343A40;
+}
+
 .add-button:hover {
   background: #E5E8FD;
+  color: #253CF2;
+}
+
+.remove-button {
+  background: #F4F6F8;
+  color: #343A40;
+}
+
+.remove-button:hover {
+  background: #ffeeee;
+  color: #e74c3c;
 }
