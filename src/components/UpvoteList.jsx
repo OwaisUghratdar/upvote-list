@@ -13,20 +13,33 @@ const UpvoteList = ({ initialCount = 3 }) => {
     setUpvoteCount(upvoteCount + 1)
   }
 
+  const removeUpvote = () => {
+    if (upvoteCount > 0) {
+      setUpvoteCount(upvoteCount - 1)
+    }
+  }
+
   return (
-    <div className="upvote-list">
-      <div className="upvotes-container">
-        {[...Array(upvoteCount)].map((_, index) => (
-          <Upvote 
-            key={index}
-            isSelected={isSelected}
-            onClick={toggleUpvotes}
-          />
-        ))}
+    <div className="upvote-list-container">
+      <div className="upvote-list">
+        <div className="upvotes-container">
+          {[...Array(upvoteCount)].map((_, index) => (
+            <Upvote 
+              key={index}
+              isSelected={isSelected}
+              onClick={toggleUpvotes}
+            />
+          ))}
+        </div>
       </div>
-      <button className="add-button" onClick={addUpvote}>
-        +
-      </button>
+      <div className="list-controls">
+        <button className="control-button add-button" onClick={addUpvote}>
+          +
+        </button>
+        <button className="control-button remove-button" onClick={removeUpvote}>
+          -
+        </button>
+      </div>
     </div>
   )
 }
