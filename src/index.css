@@ -62,6 +62,12 @@ body {
   border-radius: 6px;
 }
 
+.upvote-container {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
 .control-button {
   width: 40px;
   height: 40px;

@@ -4,16 +4,14 @@ const Upvote = ({ isSelected, onClick }) => {
   return (
     <div 
       onClick={onClick}
-      style={{
-        width: "40px",
-        height: "40px",
-        cursor: "pointer"
-      }}
+      className="upvote-container" // Add this class
     >
       <svg 
         fill="#000000" 
         viewBox="0 0 24 24" 
         xmlns="http://www.w3.org/2000/svg"
+        width="40" // Make sure width is set
+        height="40" // Make sure height is set 
       >
         <rect 
           x="2" 
