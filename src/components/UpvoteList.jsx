@@ -21,6 +21,9 @@ const UpvoteList = ({ initialCount = 3 }) => {
 
   return (
     <div className="upvote-list-container">
+      <button className="control-button remove-button" onClick={removeUpvote}>
+        -
+      </button>
       <div className="upvote-list">
         <div className="upvotes-container">
           {[...Array(upvoteCount)].map((_, index) => (
@@ -32,14 +35,9 @@ const UpvoteList = ({ initialCount = 3 }) => {
           ))}
         </div>
       </div>
-      <div className="list-controls">
-        <button className="control-button add-button" onClick={addUpvote}>
-          +
-        </button>
-        <button className="control-button remove-button" onClick={removeUpvote}>
-          -
-        </button>
-      </div>
+      <button className="control-button add-button" onClick={addUpvote}>
+        +
+      </button>
     </div>
   )
 }
