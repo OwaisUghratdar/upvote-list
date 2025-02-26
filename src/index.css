@@ -102,6 +102,17 @@ body {
   color: #e74c3c;
 }
 
+.clearButton {
+  padding: 0.5rem 1.5rem;
+  background-color: #d00e00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
   .upvote-list {

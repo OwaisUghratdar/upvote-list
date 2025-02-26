@@ -1,14 +1,30 @@
-import React from 'react'
-import UpvoteList from './components/UpvoteList'
+import React from 'react';
+import UpvoteList from './components/UpvoteList';
+import { UpvoteProvider, useUpvote } from './context/UpvoteContext';
+
+const ClearButton = () => {
+  const { clearAll } = useUpvote();
+  
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
+      <button className="clearButton" onClick={clearAll}>
+        Clear All Upvotes
+      </button>
+    </div>
+  );
+};
 
 function App() {
   return (
-    <div style={{ maxWidth: '800px', margin: '2rem auto', padding: '1rem' }}>
-      <UpvoteList initialCount={0} />
-      <UpvoteList initialCount={0} />
-      <UpvoteList initialCount={0} />
-    </div>
-  )
+    <UpvoteProvider>
+      <div style={{ maxWidth: '800px', margin: '2rem auto', padding: '1rem' }}>
+        <UpvoteList id="list-1" />
+        <UpvoteList id="list-2" />
+        <UpvoteList id="list-3" />
+        <ClearButton />
+      </div>
+    </UpvoteProvider>
+  );
 }
 
-export default App
+export default App;
