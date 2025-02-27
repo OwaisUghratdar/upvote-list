@@ -5,6 +5,7 @@ const Upvote = ({ isSelected, onClick }) => {
     <div 
       onClick={onClick}
       className="upvote-container"
+      data-testid="upvote-container"
     >
       <svg 
         fill="#000000" 
