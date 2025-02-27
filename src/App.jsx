@@ -1,6 +1,7 @@
 import React from 'react';
 import UpvoteList from './components/UpvoteList';
 import { UpvoteProvider, useUpvote } from './context/UpvoteContext';
+import './App.css';
 
 const ClearButton = () => {
   const { clearAll } = useUpvote();
@@ -17,7 +18,7 @@ const ClearButton = () => {
 function App() {
   return (
     <UpvoteProvider>
-      <div style={{ maxWidth: '800px', margin: '2rem auto', padding: '1rem' }}>
+      <div style={{ margin: '2rem auto', padding: '1rem' }}>
         <UpvoteList id="list-1" />
         <UpvoteList id="list-2" />
         <UpvoteList id="list-3" />

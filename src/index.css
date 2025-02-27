@@ -25,6 +25,8 @@ body {
   align-items: center;
   margin-bottom: 1rem;
   gap: 10px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .upvote-list {
@@ -32,10 +34,11 @@ body {
   border-radius: 8px;
   padding: 0.5rem 1rem;
   flex-grow: 1;
-  max-width: 600px;
-  min-width: 500px;
+  flex-shrink: 1;
+  min-width: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   width: 100%;
+  overflow: hidden;
 }
 
 .upvotes-container {
@@ -47,6 +50,7 @@ body {
   align-items: center;
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
+  width: 100%;
 }
 
 .upvotes-container::-webkit-scrollbar {
@@ -80,6 +84,8 @@ body {
   justify-content: center;
   transition: background-color 0.2s;
   flex-shrink: 0;
+  position: sticky;
+  z-index: 1;
 }
 
 .add-button {
@@ -122,5 +128,16 @@ body {
   
   .container {
     padding: 1rem;
+  }
+  
+  body {
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .upvote-list {
+    min-width: auto;
+    width: 100%;
   }
 }
