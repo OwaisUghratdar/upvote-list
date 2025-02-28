@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Upvote from './Upvote';
 import { useUpvote } from '../context/UpvoteContext';
 
 const UpvoteList = ({ id }) => {
-  const [isSelected, setIsSelected] = useState(false);
-  const { upvoteCounts, addUpvote, removeUpvote } = useUpvote();
+  const { upvoteCounts, selectedLists, addUpvote, removeUpvote, toggleSelection } = useUpvote();
   const count = upvoteCounts[id] || 0;
-
-  const toggleUpvotes = () => {
-    setIsSelected(!isSelected);
-  };
+  const isSelected = selectedLists[id] || false;
 
   return (
     <div className="upvote-list-container">
@@ -22,7 +18,7 @@ const UpvoteList = ({ id }) => {
             <Upvote 
               key={index}
               isSelected={isSelected}
-              onClick={toggleUpvotes}
+              onClick={() => toggleSelection(id)}
             />
           ))}
         </div>
